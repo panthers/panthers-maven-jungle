@@ -7,8 +7,9 @@ You can copy multiple versions of the same artifact by providing a range of vers
 Please feel free to use the plugin as you see fit.
 
 ### Configuration
-Currently only copy is possible.
-Version Range works as standard maven version range. [Details](http://docs.oracle.com/middleware/1212/core/MAVEN/maven_version.htm#CJHDEHAB)
+1. Currently only copy is possible.
+2. Version Range works as standard maven version range. [Details](http://docs.oracle.com/middleware/1212/core/MAVEN/maven_version.htm#CJHDEHAB)
+3. Output file name is artifactId-version.type
 
 ### Examples
 

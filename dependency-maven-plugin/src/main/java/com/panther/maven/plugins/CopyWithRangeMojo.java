@@ -51,6 +51,10 @@ public class CopyWithRangeMojo extends AbstractFromConfigMojo {
 		processArtifactItemsWithRange();
 	}
 	
+	/**
+	 * Main work of copy range plugin starts here
+	 * @throws MojoExecutionException
+	 */
 	private void processArtifactItemsWithRange() throws MojoExecutionException {
 		for (ArtifactItemsWithRange artifactItemsWithRange : artifactItems) {
 			List<ArtifactItem> listOfArtifacts = getProcessRangedArtifactItems(artifactItemsWithRange);

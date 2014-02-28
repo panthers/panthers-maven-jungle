@@ -62,12 +62,19 @@ public abstract class AbstractFromConfigMojo extends AbstractDependencyMojo {
     @Component
     private ArtifactRepositoryFactory artifactRepositoryManager;
     
+    /**
+     * For a given artifactItem with range this produces the list of artifactItems with available versions.
+     * Versions are filtered based on configuration
+     * Output file name is set as artifactId-version.type
+     * @param artifactItemsWithRange
+     * @return
+     * @throws MojoExecutionException
+     */
 	protected List<ArtifactItem> getProcessRangedArtifactItems(ArtifactItemsWithRange artifactItemsWithRange) throws MojoExecutionException {
 		getLog().debug(logArtifactWithRange(artifactItemsWithRange));
 		List<DefaultArtifactVersion> avilableVersions = getAvailableVersions(artifactItemsWithRange);
 		List<ArtifactItem> artifactItems = new ArrayList<ArtifactItem>();
 		for (DefaultArtifactVersion av : avilableVersions) {
-			getLog().debug("Found version : " + av.toString());
 			Artifact artifactWithVersion;
 			if (StringUtils.isEmpty(artifactItemsWithRange.getClassifier())) {
 				artifactWithVersion = factory.createDependencyArtifact( artifactItemsWithRange.getGroupId(), artifactItemsWithRange.getArtifactId(), VersionRange.createFromVersion(av.toString()),
@@ -92,12 +99,19 @@ public abstract class AbstractFromConfigMojo extends AbstractDependencyMojo {
 			artifactItem.getOutputDirectory().mkdir();
 			artifactItem.setOverWrite(artifactItemsWithRange.getOverWrite());
 			artifactItem.setNeedsProcessing(true);
-			getLog().debug("Adding to artifacts to process : " + artifactItem.toString());
+			getLog().info("Artifact : " + artifactItemsWithRange.getArtifactId() + " Found version : " + av.toString());
 			artifactItems.add(artifactItem);
 		}
 		return artifactItems;
 	}
 	
+	/**
+	 * Returns the available versions of the artifact of the given range.
+	 * Filtered based on configuration
+	 * @param artifactItemsWithRange
+	 * @return
+	 * @throws MojoExecutionException
+	 */
 	@SuppressWarnings("unchecked")
 	private List<DefaultArtifactVersion> getAvailableVersions(ArtifactItemsWithRange artifactItemsWithRange) throws MojoExecutionException {
 		VersionRange artifactVersionRange;
@@ -117,6 +131,7 @@ public abstract class AbstractFromConfigMojo extends AbstractDependencyMojo {
 			List<DefaultArtifactVersion> allVersions = artifactMetadataSource.retrieveAvailableVersions(artifact, local, remoteRepos);
 			if(artifactItemsWithRange.getIncludeSnapshots()) {
 				availableVersions.addAll(allVersions);
+				getLog().debug("Adding all versions " + allVersions.toString());
 			} else {
 				Collections.sort(allVersions);
 				Collections.reverse(allVersions);
@@ -134,10 +149,15 @@ public abstract class AbstractFromConfigMojo extends AbstractDependencyMojo {
 		} catch (ArtifactMetadataRetrievalException e) {
 			throw new MojoExecutionException("Could not retrieve available versions");
 		}
-		
+		getLog().debug("Final versions to process : " + availableVersions.toString());
 		return availableVersions;
 	}
 
+	/**
+	 * Log Helper
+	 * @param artifactItemsWithRange
+	 * @return
+	 */
 	private StringBuilder logArtifactWithRange(ArtifactItemsWithRange artifactItemsWithRange) {
 		StringBuilder sb = new StringBuilder("Finding Versions for : \n" + artifactItemsWithRange.toString());
 		return sb;

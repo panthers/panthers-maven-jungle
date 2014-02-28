@@ -12,4 +12,7 @@ dependency-maven-plugin [README] (dependency-maven-plugin/README.md)
 #### Maven Repository (in progress)
 Publish to public repository and provide example
 
+#### License
+* [Apache-2.0] (http://opensource.org/licenses/Apache-2.0)
+
 
