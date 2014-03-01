@@ -23,7 +23,7 @@ Add command line plugin call
 		<plugin>
 			<groupId>com.panther.maven.plugins</groupId>
 			<artifactId>dependency-maven-plugin</artifactId>
-			<version>1.0.1-SNAPSHOT</version>
+			<version>0.1-SNAPSHOT</version>
 			<executions>
 				<execution>
 					<id>multi-artifact-copy</id>
