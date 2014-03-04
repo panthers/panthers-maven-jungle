@@ -1,4 +1,4 @@
-panthers-maven-jungle [![Build Status](https://travis-ci.org/panthers/panthers-maven-jungle.png?branch=master_loc)](https://travis-ci.org/panthers/panthers-maven-jungle)
+panthers-maven-jungle [![Build Status](https://travis-ci.org/panthers/panthers-maven-jungle.png?branch=master)](https://travis-ci.org/panthers/panthers-maven-jungle)
 =====================
 
 This is the parent project of customized maven plugins for my specific needs. Please feel free to use the plugin as you see fit.
