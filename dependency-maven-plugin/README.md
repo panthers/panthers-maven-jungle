@@ -1,4 +1,4 @@
-dependency-maven-plugin [![Build Status](https://travis-ci.org/jaysaikia/panthers-maven-jungle.png?branch=master)](https://travis-ci.org/jaysaikia/panthers-maven-jungle)
+dependency-maven-plugin [![Build Status](https://travis-ci.org/panthers/panthers-maven-jungle.png?branch=master)](https://travis-ci.org/panthers/panthers-maven-jungle)
 =====================
 
 This project was specifically created for the purpose of adding artifacts to the project based on range and qualifier.
