@@ -14,7 +14,7 @@
    limitations under the License.
  */
 
-package com.panther.maven.plugins;
+package com.github.panthers.maven.plugins;
 
 import java.io.File;
 import java.util.List;
@@ -30,8 +30,8 @@ import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 import org.apache.maven.plugins.annotations.ResolutionScope;
 
-import com.panther.maven.plugins.fromConfiguration.AbstractFromConfigMojo;
-import com.panther.maven.plugins.fromConfiguration.ArtifactItemsWithRange;
+import com.github.panthers.maven.plugins.fromConfig.AbstractFromConfigMojo;
+import com.github.panthers.maven.plugins.fromConfig.ArtifactItemsWithRange;
 
 /**
  * Goal which downloads multiple artifacts based on the version given

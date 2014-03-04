@@ -14,7 +14,7 @@
    limitations under the License.
  */
 
-package com.panther.maven.plugins.fromConfiguration;
+package com.github.panthers.maven.plugins.fromConfig;
 
 import org.apache.maven.artifact.Artifact;
 import org.apache.maven.artifact.versioning.InvalidVersionSpecificationException;

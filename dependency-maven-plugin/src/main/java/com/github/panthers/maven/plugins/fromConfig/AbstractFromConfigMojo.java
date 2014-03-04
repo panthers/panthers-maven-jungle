@@ -14,7 +14,7 @@
    limitations under the License.
  */
 
-package com.panther.maven.plugins.fromConfiguration;
+package com.github.panthers.maven.plugins.fromConfig;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -33,7 +33,7 @@ import org.apache.maven.plugin.dependency.fromConfiguration.ArtifactItem;
 import org.apache.maven.plugins.annotations.Component;
 import org.apache.maven.plugins.annotations.Parameter;
 
-import com.panther.maven.plugins.AbstractDependencyMojo;
+import com.github.panthers.maven.plugins.AbstractDependencyMojo;
 
 /**
  * Panther Configuration Abstraction

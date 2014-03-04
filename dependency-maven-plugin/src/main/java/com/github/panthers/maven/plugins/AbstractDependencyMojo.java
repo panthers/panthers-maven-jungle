@@ -14,7 +14,7 @@
    limitations under the License.
  */
 
-package com.panther.maven.plugins;
+package com.github.panthers.maven.plugins;
 
 import java.io.File;
 import java.io.IOException;
